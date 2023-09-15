@@ -9,6 +9,7 @@ public class LanguageList {
         if (this.languages.isEmpty()) {
             return true;
         }
+        return false;
     }
 
     public void addLanguage(String language) {
@@ -22,13 +23,11 @@ public class LanguageList {
     }
 
     public String firstLanguage() {
-        String result = this.languages.get(0);
-        return result;
+        return this.languages.get(0);
     }
 
     public int count() {
-        int total = this.languages.length();
-        return total;
+        return languages.size();
     }
 
     public boolean containsLanguage(String language) {
@@ -39,9 +38,9 @@ public class LanguageList {
     }
 
     public boolean isExciting() {
-        if (!isExciting()) {
-            this.languages.set(false);
-        }
-        this.languages.set(true);
+        // return true if Karl's lists included Java or Koitlin
+        // we have to use 'this.continsLanguage' since we are referring to a method
+        // within our object and not maniulating our object values
+        return this.containsLanguage("Java") || this.containsLanguage("Kotlin");
     }
 }
