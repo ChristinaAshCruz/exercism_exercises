@@ -5,30 +5,43 @@ public class LanguageList {
     private final List<String> languages = new ArrayList<>();
 
     public boolean isEmpty() {
-        throw new UnsupportedOperationException("Please implement the isEmpty() method");
+        // if the language list is empty, return true
+        if (this.languages.isEmpty()) {
+            return true;
+        }
     }
 
     public void addLanguage(String language) {
-        throw new UnsupportedOperationException("Please implement the addLanguage() method");
+        // add given language to list
+        this.languages.add(language);
     }
 
     public void removeLanguage(String language) {
-        throw new UnsupportedOperationException("Please implement the removeLanguage() method");
+        // removes given languages from list
+        this.languages.remove(language);
     }
 
     public String firstLanguage() {
-        throw new UnsupportedOperationException("Please implement the firstLanguage() method");
+        String result = this.languages.get(0);
+        return result;
     }
 
     public int count() {
-        throw new UnsupportedOperationException("Please implement the count() method");
+        int total = this.languages.length();
+        return total;
     }
 
     public boolean containsLanguage(String language) {
-        throw new UnsupportedOperationException("Please implement the containsLanguage() method");
+        if (this.languages.contains(language)) {
+            return true;
+        }
+        return false;
     }
 
     public boolean isExciting() {
-        throw new UnsupportedOperationException("Please implement the isExciting() method");
+        if (!isExciting()) {
+            this.languages.set(false);
+        }
+        this.languages.set(true);
     }
 }
