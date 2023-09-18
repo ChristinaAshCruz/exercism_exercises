@@ -1,34 +1,46 @@
+import java.lang.StringBuilder;
+
 class SqueakyClean {
     static String clean(String identifier) {
-        StringBuilder stbd = new StringBuilder();
+        // task 1
+        identifier = identifier.replaceAll(" ", "_");
+        // task 2: replace all control char first
+        // then remove all other non letter characters
+        identifier = identifier.replaceAll("\\p{Cntrl}", "CTRL");
+        String regex = "[^\\p{L}\\p{N}\\p{P}\\p{Z}]";
+        identifier = identifier.replaceAll(regex, "");
+        // task 4 + 5: omit lower case Greek letter and numbers
+        identifier = identifier.replaceAll("[α-ω0-9]", "");
 
-        // initiate a for loop that will loop through each char
-        for (int i = 0; i < identifier.length(); i++) {
-            // create a char variable that will hold our current char
-            char currentChar = identifier.charAt(i);
-            // check whether our 'currentChar' is a letter value
-            // AND check whether currentChar is not a greek letter
-            if (!(Character.isLetter(currentChar)) && (currentChar >= 'α') && (currentChar <= 'ω')) {
-                // if so, add no value to our stbd
-                stbd.append("");
-            }
-            // if our currentChar is a whitespace, add an underscore instead
-            else if (Character.isWhitespace(currentChar)) {
-                stbd.append("_");
-            }
-            // if our currentChar is an ISO Control character, add "CTRL" instead
-            else if (Character.isISOControl(currentChar)) {
-                stbd.append("CTRL");
-            } else if (currentChar == '-' && Character.isLetter(identifier.charAt(i + 1))) {
-                stbd.append(Character.toUpperCase(identifier.charAt(i + 1)));
-            } else {
-                stbd.append(currentChar);
+        // task 3: Convert kebab-case to camelCase
+        if (identifier.contains("-")) {
+            StringBuilder result = new StringBuilder();
+            boolean upCaseFlag = false;
+
+            // for every character in our identifier string
+            for (char ch : identifier.toCharArray()) {
+                // if that character is a hyphen...
+                if (ch == '-') {
+                    upCaseFlag = true;
+                } else {
+                    // if the current char is NOT a hyphen...
+                    // we need to check whether the current char's upCaseFlag is true
+                    // if the char's upCaseFlag is TRUE...
+                    if (upCaseFlag) {
+                        result.append(Character.toUpperCase(ch));
+                        upCaseFlag = false;
+                    } else {
+                        // if the char's upCaseFlag is FALSE...
+                        result.append(ch);
+                    }
+                }
             }
 
+            return result.toString();
+        } else {
+            // if our identifier is clean and does not contain hyphens...
+            // return result as is
+            return identifier;
         }
-        String finalOutput = stbd.toString();
-        // return our new stbd (converted to string) result
-        return finalOutput;
     }
-
 }
