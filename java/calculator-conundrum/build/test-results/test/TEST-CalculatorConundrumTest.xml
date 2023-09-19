@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="CalculatorConundrumTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2023-09-19T01:28:58" hostname="Mac-mini.local" time="0.09">
+  <properties/>
+  <testcase name="throwExceptionForAnEmptyStringOperation" classname="CalculatorConundrumTest" time="0.05"/>
+  <testcase name="divisionWithSmallOperands" classname="CalculatorConundrumTest" time="0.025"/>
+  <testcase name="throwExceptionForNullAsOperation" classname="CalculatorConundrumTest" time="0.002"/>
+  <testcase name="throwExceptionForDivisionByZero" classname="CalculatorConundrumTest" time="0.002"/>
+  <testcase name="divisionWithLargeOperands" classname="CalculatorConundrumTest" time="0.001"/>
+  <testcase name="additionWithSmallOperands" classname="CalculatorConundrumTest" time="0.001"/>
+  <testcase name="throwExceptionForUnknownOperation" classname="CalculatorConundrumTest" time="0.002"/>
+  <testcase name="additionWithLargeOperands" classname="CalculatorConundrumTest" time="0.001"/>
+  <testcase name="multiplicationWithSmallOperands" classname="CalculatorConundrumTest" time="0.001"/>
+  <testcase name="multiplicationWithLargeOperands" classname="CalculatorConundrumTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
