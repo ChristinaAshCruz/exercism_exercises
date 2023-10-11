@@ -10,7 +10,7 @@
 
 ## 2. Calculate the final salary
 
-- If a salary is greater then the maximum, you can ignore the final value and use the maximim value instead.
+- If a salary is greater then the maximum, you can ignore the final value and use the maximum value instead.
 
 [ternary-operator-first]: https://www.programiz.com/java-programming/ternary-operator
 [ternary-operator-second]: https://www.baeldung.com/java-ternary-operator

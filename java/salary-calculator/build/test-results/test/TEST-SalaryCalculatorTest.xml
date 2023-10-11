@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="SalaryCalculatorTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2023-10-10T05:46:03" hostname="Mac-mini.local" time="0.112">
+  <properties/>
+  <testcase name="The finalSalary method returns the correct result when productsSold above threshold" classname="SalaryCalculatorTest" time="0.075"/>
+  <testcase name="finalSalary method returns correct result when daysSkipped below and productsSold above threshold" classname="SalaryCalculatorTest" time="0.003"/>
+  <testcase name="The finalSalary method returns the correct result capped at maximum salary" classname="SalaryCalculatorTest" time="0.003"/>
+  <testcase name="The finalSalary method returns the regular salary without multiplier and bonus" classname="SalaryCalculatorTest" time="0.003"/>
+  <testcase name="The finalSalary method returns the correct result getting closer to the maximum" classname="SalaryCalculatorTest" time="0.001"/>
+  <testcase name="finalSalary method returns correct result when daysSkipped above and productsSold below threshold" classname="SalaryCalculatorTest" time="0.001"/>
+  <testcase name="The finalSalary method returns the correct result when daysSkipped below threshold" classname="SalaryCalculatorTest" time="0.001"/>
+  <testcase name="The finalSalary method returns the correct result when daysSkipped and productsSold above threshold" classname="SalaryCalculatorTest" time="0.003"/>
+  <testcase name="The finalSalary method returns the correct result when daysSkipped above threshold" classname="SalaryCalculatorTest" time="0.001"/>
+  <testcase name="The finalSalary method returns the correct result when productsSold below threshold" classname="SalaryCalculatorTest" time="0.001"/>
+  <testcase name="The finalSalary method returns the correct result when daysSkipped and productsSold below threshold" classname="SalaryCalculatorTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -6,11 +6,11 @@ public class SalaryCalculator {
         boolean daysSkippedMoreThanFive = daysSkipped >= 5;
 
         // store the multiplier values for penalty and without penalty
-        int penaltyMultiplier = 0.85;
-        int regularMultiplier = 1;
+        double penaltyMultiplier = 0.85;
+        double regularMultiplier = 1.00;
 
         // create a ternary statement that will return the final multiplier
-        int multiplier = daysSkippedMoreThanFive ? penaltyMultiplier : regularMultiplier;
+        double multiplier = daysSkippedMoreThanFive ? penaltyMultiplier : regularMultiplier;
 
         return multiplier;
     }
@@ -20,24 +20,37 @@ public class SalaryCalculator {
         // task 2: Calculate the bonus for products sold
         // Implement the multiplierPerProductsSold and bonusForProductSold methods
 
-        // if employee sold 20+ products ==> mutliplier + 13
-
         // ternary statement: if our boolean is true, return 13. if not, return 0;
         boolean productsSoldMoreThanTwenty = productsSold >= 20;
 
-        int trueValue = 13;
-        int falseValue = 0;
+        int bonusMultiplier = 13;
+        int regularMultiplier = 10;
 
-        int multiplierIncrease = productsSoldMoreThanTwenty ? trueValue : falseValue;
-        return multiplierIncrease;
+        int multiplier = productsSoldMoreThanTwenty ? bonusMultiplier : regularMultiplier;
+        return multiplier;
     }
 
-    public double bonusForProductSold(int productsSold) {  
-        // return the total bonus in monetary units
-        if()
+    public double bonusForProductSold(int productsSold) {
+        // find bonus by multiplying multiplierForProducts by products sold
+        double productBonus = multiplierPerProductsSold(productsSold) * productsSold;
+        return productBonus;
+
     }
 
     public double finalSalary(int daysSkipped, int productsSold) {
-        throw new UnsupportedOperationException("Please implement the SalaryCalculator.finalSalary() method");
+        // multiply base salary of 1000.00 + sum bonus --> then return result
+
+        double baseSalary = 1000.00;
+
+        double bonusForProducts = bonusForProductSold(productsSold);
+
+        // find finalSalary by multiplying baseSalary by multiplerPerDaysSkipped and
+        // adding bonus for products
+        double finalSalary = (baseSalary * multiplierPerDaysSkipped(daysSkipped)) + (bonusForProducts);
+
+        // salaries need to be CAPPED at 2000.00
+        double maxSalary = 2000.00;
+
+        return finalSalary > maxSalary ? maxSalary : finalSalary;
     }
 }
